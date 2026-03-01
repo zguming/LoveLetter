@@ -10,14 +10,22 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Noto Serif SC', serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-attachment: fixed;
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
+            -webkit-overflow-scrolling: touch;
+            will-change: transform;
         }
 
         .heart {
@@ -28,6 +36,8 @@
             transform: rotate(45deg);
             animation: float 6s ease-in-out infinite;
             opacity: 0;
+            pointer-events: none;
+            will-change: transform, opacity;
         }
 
         .heart::before,
@@ -102,6 +112,9 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
             margin-bottom: 40px;
             animation: fadeIn 2s ease;
+            will-change: opacity, transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
         }
 
         .love-message {
@@ -176,10 +189,13 @@
             border-radius: 15px;
             text-align: center;
             transition: transform 0.3s ease;
+            will-change: transform;
         }
 
-        .reason-card:hover {
-            transform: translateY(-5px);
+        @media (hover: hover) {
+            .reason-card:hover {
+                transform: translateY(-5px);
+            }
         }
 
         .reason-icon {
@@ -507,11 +523,11 @@
             }, 7000);
         }
 
-        // 定时创建爱心
-        setInterval(createHeart, 300);
+        // 定时创建爱心 - 降低频率提升性能
+        setInterval(createHeart, 500);
 
         // 初始创建一些爱心
-        for (let i = 0; i < 15; i++) {
+        for (let i = 0; i < 10; i++) {
             setTimeout(createHeart, i * 200);
         }
     </script>
