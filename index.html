@@ -286,6 +286,88 @@
             animation: heartbeat 1.5s ease infinite;
         }
 
+        .kuroko-container {
+            background: linear-gradient(135deg, #ffe6e6 0%, #ffc3c3 100%);
+            padding: 30px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .kuroko-image {
+            flex-shrink: 0;
+            width: 40%;
+        }
+
+        .kuroko-image img {
+            max-width: 100%;
+            border-radius: 15px;
+        }
+
+        .kuroko-quote {
+            flex: 1;
+            font-style: italic;
+        }
+
+        .kuroko-quote p {
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                padding: 30px 20px;
+            }
+
+            .love-message {
+                font-size: 1.1rem;
+            }
+
+            .kuroko-container {
+                flex-direction: column-reverse;
+                padding: 20px;
+                gap: 20px;
+            }
+
+            .kuroko-image {
+                width: 100%;
+            }
+
+            .kuroko-quote p {
+                font-size: 0.95rem;
+                margin-bottom: 12px;
+            }
+
+            .distance-card {
+                padding: 30px 20px;
+            }
+
+            .distance-text {
+                font-size: 1rem;
+            }
+
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reason-card {
+                padding: 20px;
+            }
+
+            .promise-section {
+                padding: 30px 20px;
+            }
+
+            .promise-text {
+                font-size: 1rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .title {
                 font-size: 2rem;
@@ -313,6 +395,23 @@
         <main class="main-content">
             <div class="love-message">
                 <p>亲爱的，<span class="highlight">我爱你</span>。</p>
+                <p>有些话，我想好好说一次，你仔细听好了：</p>
+                
+                <div class="kuroko-container">
+                    <div class="kuroko-quote">
+                        <p>"我喜欢你，比这个世界上任何人都喜欢你。"</p>
+                        <p>"我会永远的喜欢你，"</p>
+                        <p>"唯有这份感情不会输给任何人。"</p>
+                        <p>"即使我的这个身体毁灭了，"</p>
+                        <p>"从这个世界消失了——"</p>
+                        <p style="color: #e91e63; font-weight: bold;">"来世我肯定还是会喜欢上你的。"</p>
+                    </div>
+
+                    <div class="kuroko-image">
+                        <img src="黑猫.jpeg" alt="五更琉璃表白">
+                    </div>
+                </div>
+
                 <p>虽然我们相隔千里，但我的心永远在你身边。</p>
                 <p>遇见你是我生命中最美丽的意外，<br>
                 距离再远也阻挡不了我对你的思念。</p>
